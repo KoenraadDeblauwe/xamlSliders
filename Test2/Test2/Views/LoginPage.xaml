@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             mc:Ignorable="d"
+             x:Class="Test2.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor= "#00bbd2">
+    <ContentPage.Content>
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+            <StackLayout.Resources>
+                <Style x:Key="Generic" TargetType="Label">
+                    <Setter Property="HorizontalTextAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="10" />
+                </Style>
+                <Style x:Key="Input" TargetType="Label">
+                    <Setter Property="BackgroundColor" Value="White" />
+                    <Setter Property="TextColor" Value="Gray" />
+                    <Setter Property="HorizontalTextAlignment" Value="Center" />
+                    <Setter Property="HeightRequest" Value="30" />
+                    <Setter Property="Margin" Value="10" />
+                </Style>
+            </StackLayout.Resources>
+            <Image Source="Logo.png" WidthRequest="200" VerticalOptions="Center" />
+            <Label Text="SignIn" Style="{StaticResource Generic}" TextColor="GhostWhite" FontSize="Header" />
+            <Label Text="Speak, friend, and enter" Style="{StaticResource Generic}" TextColor="Black" />
+            <Entry Placeholder="Email" Style="{StaticResource Input}" />
+            <Entry IsPassword="True" Placeholder="Password" Style="{StaticResource Input}" />
+            <Button VerticalOptions="Center" Text="SIGN IN" BackgroundColor="Black" TextColor="White" Command="{Binding LoginCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

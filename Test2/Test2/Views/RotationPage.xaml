@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="Test2.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height='8*' />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.ColumnSpan="2"
+                FontSize="20"
+                Scale="{Binding Source={x:Reference scaleSlider}, Path=Value}"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                Rotation="{Binding Source={x:Reference rotationSlider}, Path=Value}"
+                RotationX="{Binding Source={x:Reference xRotationSlider}, Path=Value}"
+                RotationY="{Binding Source={x:Reference yRotationSlider}, Path=Value}"
+                >
+                TEXT
+            </Label>
+            <Slider Maximum="10"
+                    Grid.Row="1"
+                    x:Name="scaleSlider"/>
+
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   BindingContext="{x:Reference scaleSlider}"
+                   Text="{Binding Value, Mode=OneWay,StringFormat='Scale = {0}'}" />
+
+            <Slider Maximum="360"
+                    Grid.Row="2"
+                    x:Name="rotationSlider" />
+
+            <Label Grid.Row="2"
+                   Grid.Column="1"
+                   BindingContext="{x:Reference rotationSlider}"
+                   Text="{Binding Value, Mode=OneWay,StringFormat='Rotation = {0}'}" />
+
+            <Slider Maximum="360"
+                    Grid.Row="3"
+                    x:Name="xRotationSlider" />
+
+            <Label Grid.Row="3"
+                   Grid.Column="1"
+                   BindingContext="{x:Reference xRotationSlider}"
+                   Text="{Binding Value, Mode=OneWay,StringFormat='RotationX = {0}'}" />
+
+            <Slider Maximum="360"
+                    Grid.Row="4"
+                    x:Name="yRotationSlider" />
+
+            <Label Grid.Row="4"
+                   Grid.Column="1"
+                   BindingContext="{x:Reference yRotationSlider}"
+                   Text="{Binding Value, Mode=OneWay,StringFormat='RotationY = {0}'}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
